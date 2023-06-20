@@ -6,15 +6,15 @@ export const options = {
   thresholds: {
     "ErrorCounter": [{
       abortOnFail: false,
-      threshold: 'count<1'
-    }],
-    http_req_duration: ['p(95)<100']
+      threshold: `count<${__ENV.errorCount}`
+    }]
   }
 }
 
 export default function () {
   const res = http.get('https://k6.io');
   console.log(res.timings.duration)
+  setFailure()
 }
 
 export function handleSummary(data) {
