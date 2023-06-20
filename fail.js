@@ -22,7 +22,7 @@ export function handleSummary(data) {
 
   return {
     stdout: textSummary(data, {
-      enableColors: true,
+      enableColors: false,
       indent: " ",
     }),
   };
