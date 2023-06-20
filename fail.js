@@ -4,7 +4,7 @@ import { setFailure } from './logg.js';
 
 export const options = {
   thresholds: {
-    ErrorCounter: [{
+    "ErrorCounter": [{
       abortOnFail: false,
       threshold: 'count<1'
     }],
